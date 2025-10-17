@@ -97,7 +97,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_user_points: {
+        Args: { points: number; user_id: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
