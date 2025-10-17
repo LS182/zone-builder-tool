@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Brain, Zap, Timer, Trophy, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-focus.jpg";
 
 const Index = () => {
-  const [isStarted, setIsStarted] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen">
@@ -42,7 +42,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 rounded-xl bg-gradient-to-r from-primary to-primary-glow hover:shadow-focus transition-all duration-300"
-                onClick={() => setIsStarted(true)}
+                onClick={() => navigate("/auth")}
               >
                 Start Focusing
                 <ChevronRight className="ml-2 w-5 h-5" />
@@ -51,6 +51,7 @@ const Index = () => {
                 size="lg" 
                 variant="outline"
                 className="text-lg px-8 py-6 rounded-xl border-2"
+                onClick={() => navigate("/auth")}
               >
                 Learn More
               </Button>
@@ -120,6 +121,7 @@ const Index = () => {
             <Button 
               size="lg"
               className="text-lg px-8 py-6 rounded-xl bg-gradient-to-r from-primary to-primary-glow hover:shadow-focus transition-all duration-300"
+              onClick={() => navigate("/auth")}
             >
               Create Free Account
               <ChevronRight className="ml-2 w-5 h-5" />
